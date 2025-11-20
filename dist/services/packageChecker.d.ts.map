@@ -1,0 +1,1 @@
+{"version":3,"file":"packageChecker.d.ts","sourceRoot":"","sources":["../../src/services/packageChecker.ts"],"names":[],"mappings":"AAKA,MAAM,WAAW,eAAe;IAC9B,IAAI,EAAE,MAAM,CAAC;IACb,cAAc,EAAE,MAAM,CAAC;IACvB,aAAa,EAAE,MAAM,CAAC;IACtB,aAAa,CAAC,EAAE,MAAM,CAAC;CACxB;AAED,wBAAsB,mBAAmB,CAAC,gBAAgB,GAAE,MAAM,EAAO,GAAG,OAAO,CAAC,eAAe,EAAE,CAAC,CA0GrG"}

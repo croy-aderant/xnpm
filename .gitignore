@@ -2,8 +2,8 @@
 node_modules/
 
 # Build output
-dist/
-*.tsbuildinfo
+# Note: dist/ is included in git for GitHub installations
+# *.tsbuildinfo
 
 # Environment variables
 .env
