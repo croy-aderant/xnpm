@@ -5,20 +5,22 @@ import { PackageChanges } from '../services/changelogService';
 import { PackageDiff } from '../services/packageDiffService';
 
 // Mock chalk
-vi.mock('chalk', () => ({
-  default: {
-    bold: {
+vi.mock('chalk', () => {
+  const boldFn = (str: string) => str;
+  (boldFn as any).cyan = (str: string) => str;
+  return {
+    default: {
+      bold: boldFn,
+      gray: (str: string) => str,
+      yellow: (str: string) => str,
+      white: (str: string) => str,
+      blue: (str: string) => str,
+      green: (str: string) => str,
+      red: (str: string) => str,
       cyan: (str: string) => str,
     },
-    gray: (str: string) => str,
-    yellow: (str: string) => str,
-    white: (str: string) => str,
-    blue: (str: string) => str,
-    green: (str: string) => str,
-    red: (str: string) => str,
-    cyan: (str: string) => str,
-  },
-}));
+  };
+});
 
 // Mock console.log
 const consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(() => {});

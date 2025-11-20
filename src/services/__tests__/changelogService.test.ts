@@ -19,10 +19,10 @@ describe('changelogService', () => {
   describe('getPackageChanges', () => {
     it('should fetch and parse changelog from GitHub', async () => {
       const mockPackageData = JSON.parse(
-        readFileSync(join(__dirname, '../../../__fixtures__/mockPackageData.json'), 'utf-8')
+        readFileSync(join(__dirname, '../../__fixtures__/mockPackageData.json'), 'utf-8')
       );
       const mockChangelog = readFileSync(
-        join(__dirname, '../../../__fixtures__/mockChangelog.md'),
+        join(__dirname, '../../__fixtures__/mockChangelog.md'),
         'utf-8'
       );
 
