@@ -1,6 +1,6 @@
 import axios from 'axios';
 import semver from 'semver';
-import { analyzePackageSecurity } from './securityAnalysisService';
+import { analyzePackageSecurity } from './securityAnalysisService.js';
 const npmRegistryUrl = 'https://registry.npmjs.org';
 export async function getPackageChanges(packageName, currentVersion, latestVersion) {
     try {

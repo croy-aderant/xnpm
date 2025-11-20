@@ -1,9 +1,9 @@
 import { execSync } from 'child_process';
-import { getOutdatedPackages } from '../services/packageChecker';
-import { getPackageChanges } from '../services/changelogService';
-import { getPackageDiff } from '../services/packageDiffService';
-import { formatChanges } from '../utils/formatter';
-import { formatDiff } from '../utils/diffFormatter';
+import { getOutdatedPackages } from '../services/packageChecker.js';
+import { getPackageChanges } from '../services/changelogService.js';
+import { getPackageDiff } from '../services/packageDiffService.js';
+import { formatChanges } from '../utils/formatter.js';
+import { formatDiff } from '../utils/diffFormatter.js';
 import chalk from 'chalk';
 export async function updateCommand(packages, showChanges, showDiff) {
     console.log(chalk.blue('🔍 Checking for package updates...\n'));

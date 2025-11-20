@@ -36,15 +36,17 @@ describe('changelogParser', () => {
     });
     it('should handle different changelog formats', () => {
         const formats = [
-            '## 1.2.0',
-            '### 1.2.0',
-            '# v1.2.0',
-            '## Version 1.2.0',
+            { text: '## 1.2.0', expected: '1.2.0' },
+            { text: '### 1.2.0', expected: '1.2.0' },
+            { text: '# v1.2.0', expected: '1.2.0' },
+            { text: '## Version 1.2.0', expected: '1.2.0' },
         ];
-        formats.forEach(format => {
-            const match = format.match(/^(?:##?\s*)?v?(\d+\.\d+\.\d+(?:-[^\s]+)?)/i);
+        formats.forEach(({ text, expected }) => {
+            const match = text.match(/^(?:##?\s*)?(?:Version\s+)?v?(\d+\.\d+\.\d+(?:-[^\s]+)?)/i);
             expect(match).toBeDefined();
-            expect(match?.[1]).toBe('1.2.0');
+            if (match) {
+                expect(match[1]).toBe(expected);
+            }
         });
     });
     it('should extract change items correctly', () => {

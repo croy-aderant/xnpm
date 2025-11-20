@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import { PackageDiff } from '../services/packageDiffService';
+import { PackageDiff } from '../services/packageDiffService.js';
 
 export function formatDiff(pkg: { name: string; currentVersion: string; latestVersion: string }, diff: PackageDiff) {
   console.log(chalk.bold.cyan(`\n📦 ${pkg.name}`));

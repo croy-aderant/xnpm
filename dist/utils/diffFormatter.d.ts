@@ -1,4 +1,4 @@
-import { PackageDiff } from '../services/packageDiffService';
+import { PackageDiff } from '../services/packageDiffService.js';
 export declare function formatDiff(pkg: {
     name: string;
     currentVersion: string;

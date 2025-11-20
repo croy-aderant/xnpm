@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { execSync } from 'child_process';
-import { updateCommand } from './commands/update';
-import { handleProxyCommand } from './utils/proxy';
+import { updateCommand } from './commands/update.js';
+import { handleProxyCommand } from './utils/proxy.js';
 const args = process.argv.slice(2);
 // Handle update command with --changes or --diff flags
 if (args[0] === 'update') {

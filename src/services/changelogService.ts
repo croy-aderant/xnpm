@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { execSync } from 'child_process';
 import semver from 'semver';
-import { analyzePackageSecurity, SecurityAnalysis } from './securityAnalysisService';
+import { analyzePackageSecurity, SecurityAnalysis } from './securityAnalysisService.js';
 
 export interface PackageChange {
   version: string;

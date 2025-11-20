@@ -14,8 +14,8 @@ describe('changelogService', () => {
     });
     describe('getPackageChanges', () => {
         it('should fetch and parse changelog from GitHub', async () => {
-            const mockPackageData = JSON.parse(readFileSync(join(__dirname, '../../../__fixtures__/mockPackageData.json'), 'utf-8'));
-            const mockChangelog = readFileSync(join(__dirname, '../../../__fixtures__/mockChangelog.md'), 'utf-8');
+            const mockPackageData = JSON.parse(readFileSync(join(__dirname, '../../__fixtures__/mockPackageData.json'), 'utf-8'));
+            const mockChangelog = readFileSync(join(__dirname, '../../__fixtures__/mockChangelog.md'), 'utf-8');
             // Mock npm registry response
             axios.get.mockImplementation((url) => {
                 if (url.includes('registry.npmjs.org/test-package')) {

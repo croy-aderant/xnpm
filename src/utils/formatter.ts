@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import { PackageChanges } from '../services/changelogService';
+import { PackageChanges } from '../services/changelogService.js';
 
 export function formatChanges(pkg: { name: string; currentVersion: string; latestVersion: string }, changes: PackageChanges) {
   console.log(chalk.bold.cyan(`\n📦 ${pkg.name}`));

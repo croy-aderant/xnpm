@@ -2,20 +2,22 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { formatChanges } from '../formatter';
 import { formatDiff } from '../diffFormatter';
 // Mock chalk to avoid color codes in test output
-vi.mock('chalk', () => ({
-    default: {
-        bold: {
+vi.mock('chalk', () => {
+    const boldFn = (str) => str;
+    boldFn.cyan = (str) => str;
+    return {
+        default: {
+            bold: boldFn,
+            gray: (str) => str,
+            yellow: (str) => str,
+            white: (str) => str,
+            blue: (str) => str,
+            green: (str) => str,
+            red: (str) => str,
             cyan: (str) => str,
         },
-        gray: (str) => str,
-        yellow: (str) => str,
-        white: (str) => str,
-        blue: (str) => str,
-        green: (str) => str,
-        red: (str) => str,
-        cyan: (str) => str,
-    },
-}));
+    };
+});
 // Mock console.log to capture output
 const consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(() => { });
 describe('formatter', () => {

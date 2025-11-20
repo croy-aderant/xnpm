@@ -2,20 +2,22 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { formatChanges } from '../utils/formatter';
 import { formatDiff } from '../utils/diffFormatter';
 // Mock chalk
-vi.mock('chalk', () => ({
-    default: {
-        bold: {
+vi.mock('chalk', () => {
+    const boldFn = (str) => str;
+    boldFn.cyan = (str) => str;
+    return {
+        default: {
+            bold: boldFn,
+            gray: (str) => str,
+            yellow: (str) => str,
+            white: (str) => str,
+            blue: (str) => str,
+            green: (str) => str,
+            red: (str) => str,
             cyan: (str) => str,
         },
-        gray: (str) => str,
-        yellow: (str) => str,
-        white: (str) => str,
-        blue: (str) => str,
-        green: (str) => str,
-        red: (str) => str,
-        cyan: (str) => str,
-    },
-}));
+    };
+});
 // Mock console.log
 const consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(() => { });
 describe('Integration Tests', () => {

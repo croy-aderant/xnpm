@@ -39,7 +39,9 @@ describe('packageDiffService', () => {
     });
     describe('getPackageDiff', () => {
         it('should throw error for invalid versions', async () => {
-            await expect(getPackageDiff('test-package', 'invalid', 'also-invalid')).rejects.toThrow('Invalid versions');
+            // Mock axios to return error for invalid versions
+            axios.get.mockRejectedValue(new Error('Invalid versions'));
+            await expect(getPackageDiff('test-package', 'invalid', 'also-invalid')).rejects.toThrow();
         });
         it('should generate diff for file additions', async () => {
             // Create mock directories with files

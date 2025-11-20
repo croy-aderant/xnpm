@@ -1,4 +1,4 @@
-import { SecurityAnalysis } from './securityAnalysisService';
+import { SecurityAnalysis } from './securityAnalysisService.js';
 export interface PackageChange {
     version: string;
     date?: string;
