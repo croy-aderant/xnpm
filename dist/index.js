@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import { execSync } from 'child_process';
 import { updateCommand } from './commands/update.js';
 import { handleProxyCommand } from './utils/proxy.js';
 const args = process.argv.slice(2);
@@ -25,7 +24,7 @@ else {
     // Proxy all other commands to npm
     if (args.length === 0) {
         // No arguments, just run npm
-        execSync('npm', { stdio: 'inherit' });
+        handleProxyCommand('', [], {});
     }
     else {
         const command = args[0];

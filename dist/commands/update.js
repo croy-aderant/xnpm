@@ -1,9 +1,9 @@
-import { execSync } from 'child_process';
 import { getOutdatedPackages } from '../services/packageChecker.js';
 import { getPackageChanges } from '../services/changelogService.js';
 import { getPackageDiff } from '../services/packageDiffService.js';
 import { formatChanges } from '../utils/formatter.js';
 import { formatDiff } from '../utils/diffFormatter.js';
+import { handleProxyCommand } from '../utils/proxy.js';
 import chalk from 'chalk';
 export async function updateCommand(packages, showChanges, showDiff) {
     console.log(chalk.blue('🔍 Checking for package updates...\n'));
@@ -58,10 +58,9 @@ export async function updateCommand(packages, showChanges, showDiff) {
         }
         // Ask if user wants to proceed with update
         console.log(chalk.blue('🚀 Proceeding with npm update...\n'));
-        // Build npm update command
+        // Use handleProxyCommand to ensure npm is found correctly
         const updateArgs = packages.length > 0 ? packages : [];
-        const npmCommand = `npm update ${updateArgs.join(' ')}`;
-        execSync(npmCommand, { stdio: 'inherit' });
+        handleProxyCommand('update', updateArgs, {});
     }
     catch (error) {
         console.error(chalk.red('Error:'), error.message);

@@ -27,7 +27,7 @@ if (args[0] === 'update') {
   // Proxy all other commands to npm
   if (args.length === 0) {
     // No arguments, just run npm
-    execSync('npm', { stdio: 'inherit' });
+    handleProxyCommand('', [], {});
   } else {
     const command = args[0];
     const commandArgs = args.slice(1);
