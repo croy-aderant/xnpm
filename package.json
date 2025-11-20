@@ -1,6 +1,6 @@
 {
   "name": "@your-username/xnpm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "npm proxy with change summaries for updates",
   "type": "module",
   "main": "dist/index.js",
