@@ -1,11 +1,10 @@
 # Publishing Guide
 
-This guide explains how to publish `xnpm` to GitHub and npm.
+This guide explains how to publish `xnpm` to GitHub. **This package is GitHub-only and will not be published to npm.**
 
 ## Prerequisites
 
 - GitHub account
-- npm account (if publishing to npm)
 - Git installed locally
 - Node.js 18+ installed
 
@@ -74,52 +73,20 @@ git push -u origin main
    ```
 6. Click "Publish release"
 
-## Step 5: (Optional) Publish to npm
-
-### Check Package Name Availability
-
-```bash
-npm view xnpm
-```
-
-If the package name is taken, you'll need to:
-1. Choose a different name (e.g., `@your-username/xnpm`)
-2. Update `name` in `package.json`
-
-### Publish to npm
-
-```bash
-# Login to npm (if not already logged in)
-npm login
-
-# Verify you're logged in
-npm whoami
-
-# Build the project
-npm run build
-
-# Publish (make sure version in package.json is correct)
-npm publish
-
-# Or if using scoped package:
-npm publish --access public
-```
-
-### Automated Publishing with GitHub Actions
-
-The repository includes a GitHub Actions workflow (`.github/workflows/publish.yml`) that automatically publishes to npm when you create a GitHub release.
-
-To set it up:
-
-1. Go to your npm account settings
-2. Create an access token with "Automation" type
-3. Go to your GitHub repository → Settings → Secrets and variables → Actions
-4. Add a new secret named `NPM_TOKEN` with your npm token
-5. Create a new release on GitHub - it will automatically publish to npm
-
-## Step 6: Update Installation Instructions
+## Step 5: Update Installation Instructions
 
 After publishing, update the README.md installation instructions with the actual repository URL and npm package name (if published).
+
+## Important: GitHub-Only Package
+
+This package is configured to **prevent publishing to npm**. The `package.json` includes:
+- `"private": true` - Prevents accidental npm publishing
+- A `prepublishOnly` script that exits with an error if someone tries to publish
+
+This ensures the package remains GitHub-only. Users must install via:
+```bash
+npm install -g github:YOUR_USERNAME/xnpm
+```
 
 ## Versioning
 

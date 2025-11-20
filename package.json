@@ -14,8 +14,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "echo 'This package is GitHub-only and cannot be published to npm. Use: npm install -g github:YOUR_USERNAME/xnpm' && exit 1"
   },
+  "private": true,
   "keywords": [
     "npm",
     "cli",

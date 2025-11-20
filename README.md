@@ -17,11 +17,7 @@ A command-line tool that proxies npm commands and provides detailed change summa
 
 ## Installation
 
-### Install from npm (when published)
-
-```bash
-npm install -g xnpm
-```
+**Note:** This package is only available via GitHub, not on the npm registry.
 
 ### Install from GitHub
 
