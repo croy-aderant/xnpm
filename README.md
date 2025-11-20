@@ -2,7 +2,7 @@
 
 A command-line tool that proxies npm commands and provides detailed change summaries when updating packages.
 
-[![CI](https://github.com/YOUR_USERNAME/xnpm/workflows/CI/badge.svg)](https://github.com/YOUR_USERNAME/xnpm/actions)
+[![CI](https://github.com/croy-aderant/xnpm/workflows/CI/badge.svg)](https://github.com/croy-aderant/xnpm/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org/)
 
@@ -25,10 +25,10 @@ You can install `xnpm` directly from the GitHub repository:
 
 ```bash
 # Using npm
-npm install -g github:YOUR_USERNAME/xnpm
+npm install -g github:croy-aderant/xnpm
 
 # Or clone and install locally
-git clone https://github.com/YOUR_USERNAME/xnpm.git
+git clone https://github.com/croy-aderant/xnpm.git
 cd xnpm
 npm install
 npm run build
@@ -46,7 +46,7 @@ npm install --save-dev github:YOUR_USERNAME/xnpm
 # Or add to package.json
 {
   "devDependencies": {
-    "xnpm": "github:YOUR_USERNAME/xnpm"
+    "xnpm": "github:croy-aderant/xnpm"
   }
 }
 ```
@@ -62,7 +62,7 @@ npx xnpm update --changes
 For development or to use the latest version:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/xnpm.git
+git clone https://github.com/croy-aderant/xnpm.git
 cd xnpm
 npm install
 npm run build
@@ -330,7 +330,7 @@ To publish this package to GitHub:
    ```json
    "repository": {
      "type": "git",
-     "url": "https://github.com/YOUR_USERNAME/xnpm.git"
+     "url": "https://github.com/croy-aderant/xnpm.git"
    }
    ```
 
@@ -340,7 +340,7 @@ To publish this package to GitHub:
    git add .
    git commit -m "Initial commit"
    git branch -M main
-   git remote add origin https://github.com/YOUR_USERNAME/xnpm.git
+   git remote add origin https://github.com/croy-aderant/xnpm.git
    git push -u origin main
    ```
 
